@@ -8,12 +8,97 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let webService = WebService()
+    
+    @State var character = [Character]()
+    
+    //.adaptive(minimum: 120)
+    let columns = [
+        GridItem(.adaptive(minimum: 120))
+    ]
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+            NavigationView {
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 40) {
+                        ForEach(character, id: \.id) { item in
+                            NavigationLink(destination: DetailView(chosenCharacter: item)) {
+                                
+                                VStack {
+                                    if let path = item.thumbnail?.path, let ext = item.thumbnail?.imgExt {
+                                        
+                                        let stringURL = "\(path).\(ext)"
+                                        let replacedString = stringURL.replacingOccurrences(of: "http", with: "https")
+                                        
+                                        AsyncImage(url: URL(string: replacedString )) { phase in
+                                            switch phase {
+                                            case .empty:
+                                                ProgressView()
+                                            case .success(let image):
+                                                image.resizable()
+                                                    .frame(width: 160, height: 180)
+                                                    .aspectRatio(contentMode: .fill)
+                                                
+                                                
+                                            case .failure:
+                                                Image(systemName: "photo")
+                                            @unknown default:
+                                                // Since the AsyncImagePhase enum isn't frozen,
+                                                // we need to add this currently unused fallback
+                                                // to handle any new cases that might be added
+                                                // in the future:
+                                                EmptyView()
+                                            }
+                                            
+                                            
+                                        }
+                                        
+                                        
+                                    }
+                                    
+                                    if let name = item.name {
+                                        Text(name).frame(width: (UIScreen.main.bounds.width/2)-40, height: 30)
+                                            .scaledToFit()
+                                            .minimumScaleFactor(0.3)
+                                            .backgroundStyle(.gray)
+                                    }
+                                }.frame(width: 160, height: 180)
+                                
+                            }
+                            
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                .frame(maxHeight: .infinity)
+                .navigationTitle("Marvel Characters")
+                .font(.largeTitle)
+                .padding(.top)
+                
+                
+            }
+
+        .onAppear(){
+            webService.getCharacter(url: webService.fullUrl) { wrapper in
+                switch wrapper {
+                    
+                case .success(let response):
+                    
+                    guard let results = response.data?.results else {return}
+                    
+                    character = results
+                    
+                    if let path = character[0].thumbnail?.path {
+                        print(path)
+                    }
+
+                case .failure(let error):
+                    print(error)
+                }
+
+            }
+ 
         }
         .padding()
     }

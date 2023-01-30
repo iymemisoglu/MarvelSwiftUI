@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C20B12E32988200400E6EA2B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B12E22988200400E6EA2B /* DetailView.swift */; };
 		C25BB6B32986D757006DD24C /* MarvelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25BB6B22986D757006DD24C /* MarvelApp.swift */; };
 		C25BB6B52986D757006DD24C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25BB6B42986D757006DD24C /* ContentView.swift */; };
 		C25BB6B72986D759006DD24C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C25BB6B62986D759006DD24C /* Assets.xcassets */; };
 		C25BB6BA2986D759006DD24C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C25BB6B92986D759006DD24C /* Preview Assets.xcassets */; };
+		C25BB6C12986D9F7006DD24C /* CharacterWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25BB6C02986D9F7006DD24C /* CharacterWrapper.swift */; };
+		C25BB6C32986DB45006DD24C /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25BB6C22986DB45006DD24C /* WebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C20B12E22988200400E6EA2B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C25BB6AF2986D757006DD24C /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25BB6B22986D757006DD24C /* MarvelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApp.swift; sourceTree = "<group>"; };
 		C25BB6B42986D757006DD24C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C25BB6B62986D759006DD24C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C25BB6B92986D759006DD24C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C25BB6C02986D9F7006DD24C /* CharacterWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterWrapper.swift; sourceTree = "<group>"; };
+		C25BB6C22986DB45006DD24C /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,9 @@
 			children = (
 				C25BB6B22986D757006DD24C /* MarvelApp.swift */,
 				C25BB6B42986D757006DD24C /* ContentView.swift */,
+				C20B12E22988200400E6EA2B /* DetailView.swift */,
+				C25BB6C02986D9F7006DD24C /* CharacterWrapper.swift */,
+				C25BB6C22986DB45006DD24C /* WebService.swift */,
 				C25BB6B62986D759006DD24C /* Assets.xcassets */,
 				C25BB6B82986D759006DD24C /* Preview Content */,
 			);
@@ -83,6 +92,8 @@
 			dependencies = (
 			);
 			name = Marvel;
+			packageProductDependencies = (
+			);
 			productName = Marvel;
 			productReference = C25BB6AF2986D757006DD24C /* Marvel.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,8 @@
 				Base,
 			);
 			mainGroup = C25BB6A62986D757006DD24C;
+			packageReferences = (
+			);
 			productRefGroup = C25BB6B02986D757006DD24C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +151,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C25BB6B52986D757006DD24C /* ContentView.swift in Sources */,
+				C25BB6C12986D9F7006DD24C /* CharacterWrapper.swift in Sources */,
+				C25BB6C32986DB45006DD24C /* WebService.swift in Sources */,
+				C20B12E32988200400E6EA2B /* DetailView.swift in Sources */,
 				C25BB6B32986D757006DD24C /* MarvelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
