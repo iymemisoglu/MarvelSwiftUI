@@ -54,14 +54,7 @@ struct DetailView: View {
                                 .font(.title3)
                                 .foregroundColor(.black)
                                 .frame(alignment: .leading)
-                       
-                      
-                        
-                            
-                       
-                    
-                        
-                          
+
                         Spacer()
                     }.padding()
                     

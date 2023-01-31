@@ -12,7 +12,7 @@ import SwiftUI
 
 // MARK: - CharacterDataWrapper
 
-struct CharacterDataWrapper: Codable {
+struct CharacterDataModel: Codable {
    
     
     let data : CharacterDataContainer?

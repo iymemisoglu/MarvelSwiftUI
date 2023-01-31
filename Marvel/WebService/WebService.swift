@@ -33,8 +33,7 @@ struct WebService {
         return "\(baseUrl)?apikey=\(apikey)&ts=\(ts)&hash=\(hash)"
     }
     
-    
-    func getCharacter(url : String, completion: @escaping (Result<CharacterDataWrapper,Error>) -> Void) {
+    func getCharacter(url : String, completion: @escaping (Result<CharacterDataModel,Error>) -> Void) {
         
         let url = URL(string: fullUrl)!
         
@@ -42,7 +41,7 @@ struct WebService {
             
             if let data = data {
                 do {
-                    let characterDataWrapper = try JSONDecoder().decode(CharacterDataWrapper.self, from: data)
+                    let characterDataWrapper = try JSONDecoder().decode(CharacterDataModel.self, from: data)
                    
                        
                         completion(.success((characterDataWrapper)))
@@ -58,5 +57,5 @@ struct WebService {
         
     }
     
-    
+
 }

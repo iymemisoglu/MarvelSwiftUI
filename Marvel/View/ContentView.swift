@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
+    
+    @ObservedObject var characterViewModel = CharacterViewModel()
+    
     let webService = WebService()
     
     @State var character = [Character]()
@@ -22,7 +25,7 @@ struct ContentView: View {
             NavigationView {
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 40) {
-                        ForEach(character, id: \.id) { item in
+                        ForEach(characterViewModel.character, id: \.id) { item in
                             NavigationLink(destination: DetailView(chosenCharacter: item)) {
                                 
                                 VStack {
@@ -80,24 +83,7 @@ struct ContentView: View {
             }
 
         .onAppear(){
-            webService.getCharacter(url: webService.fullUrl) { wrapper in
-                switch wrapper {
-                    
-                case .success(let response):
-                    
-                    guard let results = response.data?.results else {return}
-                    
-                    character = results
-                    
-                    if let path = character[0].thumbnail?.path {
-                        print(path)
-                    }
-
-                case .failure(let error):
-                    print(error)
-                }
-
-            }
+           
  
         }
         .padding()
