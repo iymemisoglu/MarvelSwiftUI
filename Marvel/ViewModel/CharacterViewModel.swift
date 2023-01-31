@@ -28,7 +28,11 @@ class CharacterViewModel : ObservableObject {
                 
                 guard let results = response.data?.results else {return}
                 
-                character = results
+                DispatchQueue.main.async {
+                    self.character = results
+                }
+                
+               
                 
             case .failure(let error):
                 print(error)

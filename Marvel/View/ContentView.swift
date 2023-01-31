@@ -27,7 +27,6 @@ struct ContentView: View {
                     LazyVGrid(columns: columns, spacing: 40) {
                         ForEach(characterViewModel.character, id: \.id) { item in
                             NavigationLink(destination: DetailView(chosenCharacter: item)) {
-                                
                                 VStack {
                                     if let path = item.thumbnail?.path, let ext = item.thumbnail?.imgExt {
                                         

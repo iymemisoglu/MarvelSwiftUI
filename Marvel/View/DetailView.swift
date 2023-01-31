@@ -13,7 +13,7 @@ struct DetailView: View {
     let webService = WebService()
     var chosenCharacter : Character
     var body: some View {
-        ScrollView {
+        ScrollView { 
             VStack {
                 
                 
@@ -48,12 +48,12 @@ struct DetailView: View {
                             Text(name)
                                 .font(.largeTitle)
                                 .foregroundColor(.accentColor)
-                                .frame(alignment: .leading)
+                                .frame(maxWidth:.infinity, alignment: .leading)
 
                             Text(description)
                                 .font(.title3)
                                 .foregroundColor(.black)
-                                .frame(alignment: .leading)
+                                .frame(maxWidth:.infinity, alignment: .leading)
 
                         Spacer()
                     }.padding()
