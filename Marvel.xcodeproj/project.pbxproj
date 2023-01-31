@@ -59,7 +59,7 @@
 		C25BB6B12986D757006DD24C /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
-				C272937C2989417900133880 /* SupportingFiles */,
+				C25BB6B22986D757006DD24C /* MarvelApp.swift */,
 				C2729377298940B300133880 /* View */,
 				C27293792989414B00133880 /* ViewModel */,
 				C272937A2989415700133880 /* Model */,
@@ -109,14 +109,6 @@
 				C25BB6C22986DB45006DD24C /* WebService.swift */,
 			);
 			path = WebService;
-			sourceTree = "<group>";
-		};
-		C272937C2989417900133880 /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				C25BB6B22986D757006DD24C /* MarvelApp.swift */,
-			);
-			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
