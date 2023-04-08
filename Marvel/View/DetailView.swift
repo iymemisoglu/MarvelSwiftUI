@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct DetailView: View {
-    
-    let contentView = ContentView()
-    let webService = WebService()
+
     var chosenCharacter : Character
     var body: some View {
         ScrollView { 
             VStack {
-                
                 
                 if let path = chosenCharacter.thumbnail?.path, let ext = chosenCharacter.thumbnail?.imgExt {
                     
@@ -66,6 +63,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(chosenCharacter: ContentView().character[1])
+       
+        DetailView(chosenCharacter: ContentView().character[0])
     }
 }

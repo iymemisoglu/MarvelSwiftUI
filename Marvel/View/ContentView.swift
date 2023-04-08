@@ -12,11 +12,9 @@ struct ContentView: View {
     
     @ObservedObject var characterViewModel = CharacterViewModel()
     
-    let webService = WebService()
-    
     @State var character = [Character]()
     
-    //.adaptive(minimum: 120)
+    
     let columns = [
         GridItem(.adaptive(minimum: 120))
     ]
