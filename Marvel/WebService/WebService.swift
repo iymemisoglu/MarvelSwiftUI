@@ -28,22 +28,22 @@ struct WebService {
         return hash.map{String(format: "%02hhx", $0)}.joined()
     }
     
-    var fullUrl : String {
+    var Url : String {
         
         return "\(baseUrl)?apikey=\(apikey)&ts=\(ts)&hash=\(hash)"
     }
     
     func getCharacter(url : String, completion: @escaping (Result<CharacterDataModel,Error>) -> Void) {
         
-        let url = URL(string: fullUrl)!
         
-        URLSession.shared.dataTask(with: url) { (data, error, response)  in
+        let URL = URL(string: url)!
+        
+        URLSession.shared.dataTask(with: URL) { (data, error, response)  in
             
             if let data = data {
                 do {
                     let characterDataWrapper = try JSONDecoder().decode(CharacterDataModel.self, from: data)
                    
-                       
                         completion(.success((characterDataWrapper)))
  
                 

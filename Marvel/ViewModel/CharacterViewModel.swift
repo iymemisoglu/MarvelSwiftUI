@@ -21,7 +21,7 @@ class CharacterViewModel : ObservableObject {
     
     func fetchData() {
        
-        webService.getCharacter(url: webService.fullUrl) { [self] wrapper in
+        webService.getCharacter(url: webService.Url) { [self] wrapper in
             switch wrapper {
                 
             case .success(let response):
